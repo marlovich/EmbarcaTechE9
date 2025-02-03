@@ -48,7 +48,7 @@ pico_enable_stdio_uart(interrupt1 0)
 pico_enable_stdio_usb(interrupt1 0)
 
 # Add the standard library to the build
-target_link_libraries(interrupt1 ws2812 pico_stdlib hardware_pio
+target_link_libraries(interrupt1 pico_stdlib hardware_pio
  hardware_irq hardware_clocks hardware_timer)
 
 # Add the standard include files to the build
@@ -58,7 +58,7 @@ target_include_directories(interrupt1 PRIVATE
 
 # Add any user requested libraries
 target_link_libraries(interrupt1 PRIVATE pico_stdlib hardware_pio hardware_irq 
-hardware_clocks hardware_timer pico_w ws2812.pio)
+hardware_clocks hardware_adc interrupt1.pio)
 
 pico_add_extra_outputs(interrupt1)
 
